@@ -17,7 +17,8 @@ class TweetFactory extends Factory
     public function definition(): array
     {
         return [
-            'text' => fake()->text(280),
+            'title' => fake()->text(10),
+            'message' => fake()->text(280),
             'user_id' => fake()->numberBetween(1, 10),
         ];
     }
