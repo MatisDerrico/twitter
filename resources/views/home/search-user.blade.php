@@ -3,19 +3,19 @@
 
 <x-app-layout>
 
-    <div class="flex w-50 mb-4 mx-auto">
+    <div class="mb-4 mx-auto">
 
-             <form method="post" action="{{ route('tweet.search') }}" enctype="multipart/form-data" class="mt-6 space-y-6">
+             <form method="post" action="{{ route('tweet.search') }}" enctype="multipart/form-data" class="flex mt-6 justify-center items-center">
                  @csrf
 
-                 <div class="flex gap-4">
-                     <x-text-input id="search" name="search" type="text" class="mt-1 block w-full"  required autofocus autocomplete="search" placeholder="Rechercher un tweet ou une personne" />
+                 <div class="w-50">
+                     <x-text-input id="search" name="search" type="text" class="mt-1 w-full h-10"  required autofocus autocomplete="search" placeholder="Rechercher un tweet ou une personne" />
                      <x-input-error class="mt-2" :messages="$errors->get('search')" />
 
                  </div>
 
                  <div class="flex items-center gap-4">
-                     <x-primary-button>{{ __('rechercher') }}</x-primary-button>
+                     <x-primary-button class="ml-4 h-10">{{ __('rechercher') }}</x-primary-button>
                  </div>
 
              </form>
