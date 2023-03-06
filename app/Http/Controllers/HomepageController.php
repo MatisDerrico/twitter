@@ -9,7 +9,7 @@ class HomepageController extends Controller
 {
     public function index()
     {
-        $tweets = Tweet::with('user')->latest()->paginate(10);
+        $tweets = Tweet::with('user')->withCount('likes')->latest()->paginate(10);
 
         return view('home.index', [
             'tweets' => $tweets,

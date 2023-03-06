@@ -18,7 +18,12 @@ use App\Http\Controllers\HomepageController;
 |
 */
 
+
+
 Route::get('/', [HomepageController::class, 'index'])->name('home');
+
+
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');

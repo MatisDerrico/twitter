@@ -12,7 +12,7 @@ class Like extends Model
 
     public $timestamps = false;
 
-    protected $fillable = ['tweet_id'];
+    protected $fillable = ['tweet_id', 'user_id'];
 
     public function tweet()
     {

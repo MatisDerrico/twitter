@@ -27,6 +27,7 @@
 
         <div class="flex">
             <a href="{{route('like.store', $tweet->id)}}"><x-heroicon-o-heart class="w-5 h-5 text-red-400" />Liker</a>
+            <p> {{ $tweet->likes_count }}</p>
         </div>
 
 </div>

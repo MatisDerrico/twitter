@@ -20,7 +20,13 @@ class TweetController extends Controller
      */
     public function display(): View
     {
-        $tweets = Tweet::where('user_id', Auth::id())->orderBy('created_at', 'ASC')->paginate(4);
+        $tweets = Tweet::withCount('likes')
+        ->where('user_id', Auth::id())
+        ->orderBy('created_at', 'ASC')
+        ->paginate(4);
+
+       // dd($tweets);
+
         return view('home.tweet', compact('tweets'));
     }
 
@@ -81,7 +87,7 @@ class TweetController extends Controller
     }
 
      /**
-     * Display the specified resource.
+     * Affiche le tweet dans une autre page.
      */
     public function show(Tweet $tweet)
     {

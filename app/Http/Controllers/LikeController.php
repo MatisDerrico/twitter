@@ -10,12 +10,13 @@ class LikeController extends Controller
 {
     public function store(Tweet $tweet)
     {
-        Like::create([
-            'tweet_id'=>$tweet->id
+        //dd(auth()->user()->i);
+        Like::firstOrCreate([
+            'tweet_id'=>$tweet->id,
+            'user_id'=>auth()->user()->id
         ]);
 
         return redirect(url()->previous());
     }
-
 
 }
